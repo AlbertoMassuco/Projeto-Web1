@@ -1,0 +1,158 @@
+:root {
+    --background-light: #f9f9f9;
+    --text-light: #333;
+    --background-dark: #333;
+    --text-dark: #f9f9f9;
+    --primary: #0088cc;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.light-mode {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px 5px;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}
+
+.menu button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary);
+    color: rgb(white, white, white);
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 5px 20px;
+    background-color: #9dd8f0;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #333;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #666;
+}
+
+.float-image {
+    position: absolute;
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+#image2 {
+    width: 400px;
+    top: 50%;
+    right: 60%;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.card {
+    background-color: rgb(223, 223, 215);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(53, 41, 221, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 22ch;
+    animation: typing 3s steps(22) 1, blink 0.75s step-end infinite;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 22ch }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .typing {
+        font-size: 1.5rem;
+    }
+}
+
+footer {
+    text-align: left;
+    padding: 5px;
+    margin-top: 50px;
+    background-color: #77e0fa;
+}
